@@ -64,6 +64,7 @@ async def send_echo(message: Message):
     await message.reply(text=message.text)
 
 # Регистрируем хэндлеры
+
 dp.message.register(process_start_command, Command(commands='start'))
 dp.message.register(process_help_command, Command(commands='help'))
 dp.message.register(send_photo_echo, F.photo)
@@ -71,6 +72,9 @@ dp.message.register(send_sticker_echo, F.sticker)
 dp.message.register(send_video_echo, F.video)
 dp.message.register(send_audio_echo, F.audio)
 dp.message.register(send_doc_echo, F.document)
+dp.message.register(send_animation, F.animation)
+dp.message.register(send_dice, F.ldice)
+dp.message.register(send_poll_echo, F.poll)
 dp.message.register(send_loc_echo, F.location)
 dp.message.register(send_contact_echo, F.contact)
 dp.message.register(send_voice_echo, F.voice)
